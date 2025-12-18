@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Day2_MiniProfile</string>
+    <string name="app_title">Profile</string>
+    <string name="profile_img">Profile Picture</string>
+    <string name="profile_name">Shella Mae Galang</string>
+    <string name="profile_email">sgalang@77global.biz</string>
+    <string name="profile_skills">RPA | Outsystems | Python | Soon Mobile Dev</string>
+    <string name="basic_info">Basic Information</string>
+    <string name="birthday_text">Birthday</string>
+    <string name="arrow">Display Toast Message</string>
+    <string name="birthday_value">March 21, 1998</string>
+    <string name="address_text">Address</string>
+    <string name="address_value">Malolos, Bulacan</string>
+    <string name="degree_text">Degree</string>
+    <string name="degree_value">Bachelor of Science in Information Technology</string>
+    <string name="yis_text">Years in Service</string>
+    <string name="yis_value">7 years!</string>
+    <string name="skills_text">Skills</string>
+    <string name="skills_value">RPA,Python,Outsystems,HTML,CSS,VB.Net,Sql</string>
+    <string name="hobby_title">Hobbies</string>
+    <string name="hobby1">* Listening to Music</string>
+    <string name="hobby2">* Working out</string>
+    <string name="hobby3">* Reading</string>
+    <string name="hobby4">* Road trips</string>
+    <string name="hobby5">* Traveling</string>
+    <string name="arrow_back">Back</string>
+</resources>

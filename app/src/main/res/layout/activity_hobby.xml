@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="30dp"
+    android:layout_margin="25dp"
+    tools:context=".HobbyActivity">
+
+    <!-- Blue background block -->
+    <View
+        android:id="@+id/bgBlueHobby"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/navy_blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Back arrow on the left -->
+    <ImageView
+        android:id="@+id/icBackArrow"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_arrow_back"
+        android:contentDescription="@string/arrow_back"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintStart_toStartOf="@id/bgBlueHobby"
+        app:layout_constraintTop_toTopOf="@id/bgBlueHobby"
+        app:layout_constraintBottom_toBottomOf="@id/bgBlueHobby"
+        android:layout_marginStart="16dp"/>
+
+    <TextView
+        android:id="@+id/textHobby"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hobby_title"
+        android:textColor="@color/beige"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:elevation="2dp"
+        app:layout_constraintTop_toTopOf="@id/bgBlueHobby"
+        app:layout_constraintStart_toStartOf="@id/bgBlueHobby"
+        app:layout_constraintEnd_toEndOf="@id/bgBlueHobby"
+        app:layout_constraintBottom_toBottomOf="@id/bgBlueHobby"/>
+
+    <!-- Start Listing of hobbies -->
+    <TextView
+        android:id="@+id/textHobby1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hobby1"
+        android:textStyle="bold"
+        android:textColor="@color/navy_blue"
+        app:layout_constraintTop_toBottomOf="@id/bgBlueHobby"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/textHobby2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hobby2"
+        android:textStyle="bold"
+        android:textColor="@color/navy_blue"
+        app:layout_constraintTop_toBottomOf="@id/textHobby1"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/textHobby3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hobby3"
+        android:textStyle="bold"
+        android:textColor="@color/navy_blue"
+        app:layout_constraintTop_toBottomOf="@id/textHobby2"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/textHobby4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hobby4"
+        android:textStyle="bold"
+        android:textColor="@color/navy_blue"
+        app:layout_constraintTop_toBottomOf="@id/textHobby3"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/hobby5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hobby5"
+        android:textStyle="bold"
+        android:textColor="@color/navy_blue"
+        app:layout_constraintTop_toBottomOf="@id/textHobby4"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
