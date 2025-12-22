@@ -16,7 +16,7 @@
     <string name="yis_text">Years in Service</string>
     <string name="yis_value">7 years!</string>
     <string name="skills_text">Skills</string>
-    <string name="skills_value">RPA,Python,Outsystems,HTML,CSS,VB.Net,Sql</string>
+    <string name="skills_value">RPA | Python | Outsystems | HTML | CSS | VB.Net | Sql</string>
     <string name="hobby_title">Hobbies</string>
     <string name="hobby1">* Listening to Music</string>
     <string name="hobby2">* Working out</string>
@@ -24,4 +24,6 @@
     <string name="hobby4">* Road trips</string>
     <string name="hobby5">* Traveling</string>
     <string name="arrow_back">Back</string>
+    <string name="btn_logout_text">Logout</string>
+    <string name="profile_info_pc">Profile Info</string>
 </resources>

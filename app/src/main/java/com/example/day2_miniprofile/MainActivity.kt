@@ -1,78 +1,94 @@
 package com.example.day2_miniprofile
 
 import android.os.Bundle
-import android.widget.ImageView
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.day2_miniprofile.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    // Shortcut to all views in activity_main.xml
+    private lateinit var binding: ActivityMainBinding
+
+    // Open the app, create the activity
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
 
-        // Click button
-        val hobbiesButton = findViewById<com.google.android.material.button.MaterialButton>(
-            R.id.btnGoToHobbies
+        // Loads activity_main.xml to binding and display it on screen
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        // Back stack listener
+        supportFragmentManager.addOnBackStackChangedListener {
+            // Count fragments currently in the back stack
+            val fragmentCount = supportFragmentManager.backStackEntryCount
+
+            // If there are no fragments show the profile screen, hide the fragment container
+            if (fragmentCount == 0) {
+                binding.profileContent.visibility = View.VISIBLE
+                binding.fragmentContainer.visibility = View.GONE
+            }
+        }
+
+        // Call setupArrowClick for each arrow icon
+        // Birthday Arrow
+        setupArrowClick(
+            binding.iconBirthdayArrow,
+            getString(R.string.birthday_text),
+            getString(R.string.birthday_value)
         )
 
-        hobbiesButton.setOnClickListener {
-            val intent = android.content.Intent(this, HobbyActivity::class.java)
-            startActivity(intent)
+        // Address Arrow
+        setupArrowClick(
+            binding.iconAddressArrow,
+            getString(R.string.address_text),
+            getString(R.string.address_value)
+        )
+
+        // Degree Arrow
+        setupArrowClick(
+            binding.iconDegreeArrow,
+            getString(R.string.degree_text),
+            getString(R.string.degree_value)
+        )
+
+        // Years in Service Arrow
+        setupArrowClick(
+            binding.iconYISArrow,
+            getString(R.string.yis_text),
+            getString(R.string.yis_value)
+        )
+
+        // Skills Arrow
+        setupArrowClick(
+            binding.iconSkillsArrow,
+            getString(R.string.skills_text),
+            getString(R.string.skills_value)
+        )
+    }
+
+    // Helper function, setup arrow clicks
+    private fun setupArrowClick(arrow: View, header: String, info: String){
+        // When the arrow is clicked, open the fragment and pass data to it
+        arrow.setOnClickListener{
+            openFragment(header, info)
         }
+    }
 
-        // Birthday Toast
-        val birthdayArrow = findViewById<ImageView>(R.id.iconBirthdayArrow)
+    // Open the profile info fragment
+    private fun openFragment(headerTitle: String, profileInfo: String) {
+        // Hide profile UI and show fragment UI
+        binding.profileContent.visibility = View.GONE
+        binding.fragmentContainer.visibility = View.VISIBLE
 
-        birthdayArrow.setOnClickListener {
-            Toast.makeText(
-                this,
-                getString(R.string.birthday_value),
-                Toast.LENGTH_SHORT).show()
-        }
-
-        // Address Toast
-        val addressArrow = findViewById<ImageView>(R.id.iconAddressArrow)
-
-        addressArrow.setOnClickListener {
-            Toast.makeText(
-                this,
-                getString(R.string.address_value),
-                Toast.LENGTH_SHORT).show()
-        }
-
-        // Degree Toast
-        val degreeArrow = findViewById<ImageView>(R.id.iconDegreeArrow)
-
-        degreeArrow.setOnClickListener {
-            Toast.makeText(
-                this,
-                getString(R.string.degree_value),
-                Toast.LENGTH_SHORT).show()
-        }
-
-        // Years in Service Toast
-        val yisArrow = findViewById<ImageView>(R.id.iconYISArrow)
-
-        yisArrow.setOnClickListener {
-            Toast.makeText(
-                this,
-                getString(R.string.yis_value),
-                Toast.LENGTH_SHORT).show()
-        }
-
-        // Skills Toast
-        val skillsArrow = findViewById<ImageView>(R.id.iconSkillsArrow)
-
-        skillsArrow.setOnClickListener {
-            Toast.makeText(
-                this,
-                getString(R.string.skills_value),
-                Toast.LENGTH_LONG).show()
-        }
-
+        // ProfileInfoFragment Operation
+        supportFragmentManager.beginTransaction()
+            // Put ProfileInfoFragment inside fragment_container
+            .replace(
+                binding.fragmentContainer.id,
+                ProfileInfoFragment.newInstance(headerTitle, profileInfo)
+            )
+            .addToBackStack(null) // Remember the screen
+            .commit() // Executes the transaction
     }
 }
