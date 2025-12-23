@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navBirthday"
+        android:icon="@drawable/ic_birthday"
+        android:title="@string/nav_birthday_title"/>
+
+    <item
+        android:id="@+id/navAddress"
+        android:icon="@drawable/ic_address"
+        android:title="@string/nav_address_title"/>
+
+    <item
+        android:id="@+id/navDegree"
+        android:icon="@drawable/ic_degree"
+        android:title="@string/nav_degree_title"/>
+
+    <item
+        android:id="@+id/navYIS"
+        android:icon="@drawable/ic_yis"
+        android:title="@string/nav_yis_title"/>
+
+    <item
+        android:id="@+id/navSkills"
+        android:icon="@drawable/ic_skills"
+        android:title="@string/nav_skills_title"/>
+
+</menu>

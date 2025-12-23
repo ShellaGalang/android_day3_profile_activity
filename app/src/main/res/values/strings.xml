@@ -26,4 +26,9 @@
     <string name="arrow_back">Back</string>
     <string name="btn_logout_text">Logout</string>
     <string name="profile_info_pc">Profile Info</string>
+    <string name="nav_birthday_title">Birthday</string>
+    <string name="nav_address_title">Address</string>
+    <string name="nav_degree_title">Degree</string>
+    <string name="nav_yis_title">Years in Service</string>
+    <string name="nav_skills_title">Skills</string>
 </resources>

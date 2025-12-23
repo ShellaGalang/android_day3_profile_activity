@@ -65,6 +65,53 @@ class MainActivity : AppCompatActivity() {
             getString(R.string.skills_text),
             getString(R.string.skills_value)
         )
+
+        // Bottom Menu Bar Navigation
+        binding.bottomNavigation.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.navBirthday -> {
+                    openFragment(
+                        getString(R.string.birthday_text),
+                        getString(R.string.birthday_value)
+                    )
+                    true
+                }
+
+                R.id.navAddress -> {
+                    openFragment(
+                        getString(R.string.address_text),
+                        getString(R.string.address_value)
+                    )
+                    true
+                }
+
+                R.id.navDegree -> {
+                    openFragment(
+                        getString(R.string.degree_text),
+                        getString(R.string.degree_value)
+                    )
+                    true
+                }
+
+                R.id.navYIS -> {
+                    openFragment(
+                        getString(R.string.yis_text),
+                        getString(R.string.yis_value)
+                    )
+                    true
+                }
+
+                R.id.navSkills -> {
+                    openFragment(
+                        getString(R.string.skills_text),
+                        getString(R.string.skills_value)
+                    )
+                    true
+                }
+
+                else -> false
+            }
+        }
     }
 
     // Helper function, setup arrow clicks
