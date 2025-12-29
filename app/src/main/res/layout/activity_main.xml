@@ -117,165 +117,17 @@
             app:layout_constraintTop_toBottomOf="@id/skills" />
 
         <!-- ================= PROFILE ITEMS WITH ARROWS ================= -->
-        <!-- Birthday -->
-        <TextView
-            android:id="@+id/textBirthday"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="15dp"
-            android:text="@string/birthday_text"
-            android:textColor="@color/navy_blue"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textBasicInfo" />
 
-        <ImageView
-            android:id="@+id/iconBirthdayArrow"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginEnd="12dp"
-            android:contentDescription="@string/arrow"
-            android:src="@drawable/ic_arrow_right"
-            app:layout_constraintBottom_toBottomOf="@id/textBirthday"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/textBirthday" />
-
-        <View
-            android:id="@+id/birthdaySeparator"
+        <!-- Recycler View Container - Basic Information -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/basicInfoRV"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="10dp"
-            android:background="#DDDDDD"
-            app:layout_constraintTop_toBottomOf="@id/textBirthday" />
-
-        <!-- Address -->
-        <TextView
-            android:id="@+id/textAddress"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="12dp"
-            android:text="@string/address_text"
-            android:textColor="@color/navy_blue"
-            android:textSize="18sp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/textBasicInfo"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/birthdaySeparator" />
-
-        <ImageView
-            android:id="@+id/iconAddressArrow"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginEnd="12dp"
-            android:contentDescription="@string/arrow"
-            android:src="@drawable/ic_arrow_right"
-            app:layout_constraintBottom_toBottomOf="@id/textAddress"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/textAddress" />
-
-        <View
-            android:id="@+id/addressSeparator"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="10dp"
-            android:background="#DDDDDD"
-            app:layout_constraintTop_toBottomOf="@id/textAddress" />
-
-        <!-- Degree -->
-        <TextView
-            android:id="@+id/textDegree"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="12dp"
-            android:text="@string/degree_text"
-            android:textColor="@color/navy_blue"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/addressSeparator" />
-
-        <ImageView
-            android:id="@+id/iconDegreeArrow"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginEnd="12dp"
-            android:contentDescription="@string/arrow"
-            android:src="@drawable/ic_arrow_right"
-            app:layout_constraintBottom_toBottomOf="@id/textDegree"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/textDegree" />
-
-        <View
-            android:id="@+id/degreeSeparator"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="10dp"
-            android:background="#DDDDDD"
-            app:layout_constraintTop_toBottomOf="@id/textDegree" />
-
-        <!-- Years in Service -->
-        <TextView
-            android:id="@+id/textYIS"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="12dp"
-            android:text="@string/yis_text"
-            android:textColor="@color/navy_blue"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/degreeSeparator" />
-
-        <ImageView
-            android:id="@+id/iconYISArrow"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginEnd="12dp"
-            android:contentDescription="@string/arrow"
-            android:src="@drawable/ic_arrow_right"
-            app:layout_constraintBottom_toBottomOf="@id/textYIS"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/textYIS" />
-
-        <View
-            android:id="@+id/yisSeparator"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="10dp"
-            android:background="#DDDDDD"
-            app:layout_constraintTop_toBottomOf="@id/textYIS" />
-
-        <!-- Skills -->
-        <TextView
-            android:id="@+id/textSkills"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="12dp"
-            android:text="@string/skills_text"
-            android:textColor="@color/navy_blue"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/yisSeparator" />
-
-        <ImageView
-            android:id="@+id/iconSkillsArrow"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginEnd="12dp"
-            android:contentDescription="@string/arrow"
-            android:src="@drawable/ic_arrow_right"
-            app:layout_constraintBottom_toBottomOf="@id/textSkills"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/textSkills" />
-
-        <View
-            android:id="@+id/skillsSeparator"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="10dp"
-            android:background="#DDDDDD"
-            app:layout_constraintTop_toBottomOf="@id/textSkills" />
+            tools:listitem="@layout/item_basic_info"/>
 
         <!-- Logout Button -->
         <com.google.android.material.button.MaterialButton
@@ -287,7 +139,7 @@
             android:text="@string/btn_logout_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textSkills" />
+            app:layout_constraintTop_toBottomOf="@id/basicInfoRV" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -302,7 +154,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:name="com.example.day2_miniprofile.ProfileInfoFragment"
+        tools:layout="@layout/fragment_profile_info" />
     <!-- ================= END FRAGMENT CONTAINER ================= -->
 
     <!-- Bottom Menu Bar Navigation -->

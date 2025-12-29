@@ -3,6 +3,7 @@ package com.example.day2_miniprofile
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.day2_miniprofile.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -30,41 +31,37 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // Call setupArrowClick for each arrow icon
-        // Birthday Arrow
-        setupArrowClick(
-            binding.iconBirthdayArrow,
-            getString(R.string.birthday_text),
-            getString(R.string.birthday_value)
+        // Start of Recycler View Profile Info
+        val profileItems = listOf(
+            ProfileItem(
+                getString(R.string.birthday_text),
+                getString(R.string.birthday_value)
+            ),
+            ProfileItem(
+                getString(R.string.address_text),
+                getString(R.string.address_value)
+            ),
+            ProfileItem(
+                getString(R.string.degree_text),
+                getString(R.string.degree_value)
+            ),
+            ProfileItem(
+                getString(R.string.yis_text),
+                getString(R.string.yis_value)
+            ),
+            ProfileItem(
+                getString(R.string.skills_text),
+                getString(R.string.skills_value)
+            )
         )
 
-        // Address Arrow
-        setupArrowClick(
-            binding.iconAddressArrow,
-            getString(R.string.address_text),
-            getString(R.string.address_value)
-        )
+        binding.basicInfoRV.layoutManager = LinearLayoutManager(this)
 
-        // Degree Arrow
-        setupArrowClick(
-            binding.iconDegreeArrow,
-            getString(R.string.degree_text),
-            getString(R.string.degree_value)
-        )
+        binding.basicInfoRV.adapter = ProfileAdapter(profileItems) { item ->
+            openFragment(item.title, item.value)
+        }
 
-        // Years in Service Arrow
-        setupArrowClick(
-            binding.iconYISArrow,
-            getString(R.string.yis_text),
-            getString(R.string.yis_value)
-        )
 
-        // Skills Arrow
-        setupArrowClick(
-            binding.iconSkillsArrow,
-            getString(R.string.skills_text),
-            getString(R.string.skills_value)
-        )
 
         // Bottom Menu Bar Navigation
         binding.bottomNavigation.setOnItemSelectedListener { item ->
